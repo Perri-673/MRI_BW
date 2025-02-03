@@ -80,7 +80,6 @@ class Discriminator(nn.Module):
         self.conv2 = nn.Conv2d(curr_dim, c_dim, kernel_size=kernel_size, bias=False)
         
     def forward(self, x):
-        print(f'x.shape: {x.shape}')
         h = self.main(x)
         out_src = self.conv1(h)
         out_cls = self.conv2(h)
